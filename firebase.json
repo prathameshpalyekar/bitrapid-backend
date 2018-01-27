@@ -1,0 +1,27 @@
+{
+    "database": {
+        "rules": "database.rules.json"
+    },
+    "hosting": {
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "/api/hello", "function": "httpHello"
+            }, {
+                "source": "/api/addUser", "function": "httpAddUser"
+            }, {
+                "source": "/api/getHash", "function": "httpGetHash"
+            }, {
+                "source": "/api/login", "function": "httpLogin"
+            }, {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
+}
